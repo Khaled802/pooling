@@ -3,8 +3,6 @@ package com.example.pooling.entity;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.hibernate.annotations.ManyToAny;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,9 +19,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 @Entity
@@ -31,12 +28,11 @@ import lombok.ToString;
         @UniqueConstraint(columnNames = { "username" }),
         @UniqueConstraint(columnNames = { "email" })
 })
-@Getter
-@Setter
-@ToString
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString(exclude = "roles")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
