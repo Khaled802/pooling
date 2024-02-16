@@ -1,4 +1,4 @@
-package com.example.pooling.entity;
+package com.example.pooling.model;
 
 import java.util.Objects;
 
@@ -14,6 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -24,7 +25,9 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@Table(name = "choices")
+@Table(name = "choices", uniqueConstraints = {
+    @UniqueConstraint(columnNames = {"poll_id", "iter"})
+})
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

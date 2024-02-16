@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.example.pooling.entity.Poll;
+import com.example.pooling.model.Poll;
 
 public interface PollRepository extends JpaRepository<Poll, Long> {
     @Query("""

@@ -4,8 +4,8 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.pooling.entity.Role;
-import com.example.pooling.entity.Role.RoleName;
+import com.example.pooling.model.Role;
+import com.example.pooling.model.Role.RoleName;
 
 
 public interface RoleRepository extends JpaRepository<Role, Long> {

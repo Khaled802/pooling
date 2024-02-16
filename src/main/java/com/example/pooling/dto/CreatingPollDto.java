@@ -3,8 +3,6 @@ package com.example.pooling.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.pooling.entity.Choice;
-
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AccessLevel;

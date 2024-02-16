@@ -1,4 +1,4 @@
-package com.example.pooling.entity;
+package com.example.pooling.model;
 
 import java.util.HashSet;
 import java.util.Set;

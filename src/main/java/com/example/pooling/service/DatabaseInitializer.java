@@ -4,8 +4,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.example.pooling.entity.Role;
-import com.example.pooling.entity.User;
+import com.example.pooling.model.Role;
+import com.example.pooling.model.User;
 
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;

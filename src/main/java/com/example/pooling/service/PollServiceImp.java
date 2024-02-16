@@ -2,10 +2,12 @@ package com.example.pooling.service;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
-import com.example.pooling.entity.Choice;
-import com.example.pooling.entity.Poll;
+import com.example.pooling.model.Choice;
+import com.example.pooling.model.Poll;
 import com.example.pooling.repository.PollRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -28,5 +30,10 @@ public class PollServiceImp implements PollService {
     @Override
     public List<Poll> getAll() {
         return pollRepository.findAllWithJoin();
+    }
+
+    @Override
+    public Poll getById(Long id) {
+        return pollRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "not found poll"));
     }
 }

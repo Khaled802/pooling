@@ -1,4 +1,4 @@
-package com.example.pooling.entity;
+package com.example.pooling.model;
 
 import org.hibernate.annotations.NaturalId;
 

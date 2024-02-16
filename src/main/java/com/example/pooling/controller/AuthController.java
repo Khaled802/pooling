@@ -1,23 +1,5 @@
 package com.example.pooling.controller;
 
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
-
-import com.example.pooling.dto.LoginDto;
-import com.example.pooling.dto.MessageDto;
-import com.example.pooling.dto.RegisterDto;
-import com.example.pooling.entity.Role;
-import com.example.pooling.entity.User;
-import com.example.pooling.entity.Role.RoleName;
-import com.example.pooling.jwt.JwtHelper;
-import com.example.pooling.repository.RoleRepository;
-import com.example.pooling.repository.UserRepository;
-
-import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
-import java.lang.management.LockInfo;
 import java.util.Map;
 
 import org.modelmapper.ModelMapper;
@@ -30,8 +12,22 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.example.pooling.dto.LoginDto;
+import com.example.pooling.dto.MessageDto;
+import com.example.pooling.dto.RegisterDto;
+import com.example.pooling.jwt.JwtHelper;
+import com.example.pooling.model.Role;
+import com.example.pooling.model.Role.RoleName;
+import com.example.pooling.model.User;
+import com.example.pooling.repository.RoleRepository;
+import com.example.pooling.repository.UserRepository;
+
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/auth")

@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.pooling.entity.User;
+import com.example.pooling.model.User;
 
 
 public interface UserRepository extends JpaRepository<User, Long> {
